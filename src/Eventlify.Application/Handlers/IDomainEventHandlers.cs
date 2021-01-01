@@ -2,8 +2,7 @@
 
 namespace Eventlify.Application.Handlers
 {
-    // ReSharper disable once InconsistentNaming
-    public interface DomainEventHandlers
+    public interface IDomainEventHandlers
     {
         public interface IGetDomainEvents : IQueryHandler<Models.DomainEvent>
         {

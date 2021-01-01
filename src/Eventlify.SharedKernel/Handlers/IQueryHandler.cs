@@ -15,7 +15,7 @@ namespace Eventlify.SharedKernel.Handlers
         /// </summary>
         /// <param name="query">Query used for getting the object(s).</param>
         /// <returns></returns>
-        Task<TResult> GetBy(TQuery query);
+        Task<TResult> Handle(TQuery query);
     }
 
     /// <summary>
@@ -27,6 +27,6 @@ namespace Eventlify.SharedKernel.Handlers
         /// Gets all available <see cref="TResult"/>.
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<TResult>> GetAll();
+        Task<IEnumerable<TResult>> Handle();
     }
 }

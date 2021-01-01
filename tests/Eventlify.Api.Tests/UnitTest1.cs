@@ -8,7 +8,6 @@ namespace Eventlify.Api.Tests
         [Fact]
         public void Test1()
         {
-
         }
     }
 }
