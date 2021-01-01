@@ -3,21 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventlify.Api", "src\Eventlify.Api\Eventlify.Api.csproj", "{617109F6-A2DB-476E-AEFA-E6DA75CC36A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventlify.Api", "src\Eventlify.Api\Eventlify.Api.csproj", "{617109F6-A2DB-476E-AEFA-E6DA75CC36A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventlify.Persistence.Mongo", "src\Eventlify.Persistence.Mongo\Eventlify.Persistence.Mongo.csproj", "{5F610F39-2398-4294-A3B6-10BE6370AEF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventlify.Persistence.Mongo", "src\Eventlify.Persistence.Mongo\Eventlify.Persistence.Mongo.csproj", "{5F610F39-2398-4294-A3B6-10BE6370AEF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventlify.Persistence.Mongo.Tests", "tests\Eventlify.Persistence.Mongo.Tests\Eventlify.Persistence.Mongo.Tests.csproj", "{5B0BA825-D293-4534-9EF0-48E54D1AB5B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventlify.Persistence.Mongo.Tests", "tests\Eventlify.Persistence.Mongo.Tests\Eventlify.Persistence.Mongo.Tests.csproj", "{5B0BA825-D293-4534-9EF0-48E54D1AB5B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventlify.Application", "src\Eventlify.Application\Eventlify.Application.csproj", "{272C3A36-A948-4B2E-9F5E-E9F80334956B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventlify.Application", "src\Eventlify.Application\Eventlify.Application.csproj", "{272C3A36-A948-4B2E-9F5E-E9F80334956B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventlify.Application.Tests", "tests\Eventlify.Application.Tests\Eventlify.Application.Tests.csproj", "{2E4D643E-7E55-41FF-A1F7-43444D04159A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventlify.Application.Tests", "tests\Eventlify.Application.Tests\Eventlify.Application.Tests.csproj", "{2E4D643E-7E55-41FF-A1F7-43444D04159A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8385A8DE-9291-4B77-A3F6-80F0ABF416DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{73740BEB-E7CD-44D6-BD1A-6B50858A53B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventlify.Api.Tests", "tests\Eventlify.Api.Tests\Eventlify.Api.Tests.csproj", "{3C24A3ED-B8F9-4E20-9630-5A2DB56BBF72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventlify.Api.Tests", "tests\Eventlify.Api.Tests\Eventlify.Api.Tests.csproj", "{3C24A3ED-B8F9-4E20-9630-5A2DB56BBF72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B2E4FB38-0AA5-46B7-9E0F-8C1555D7E203}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventlify.SharedKernel", "src\Eventlify.SharedKernel\Eventlify.SharedKernel.csproj", "{D8A91617-9617-40BC-ACC4-4427C40FCD71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +56,10 @@ Global
 		{3C24A3ED-B8F9-4E20-9630-5A2DB56BBF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C24A3ED-B8F9-4E20-9630-5A2DB56BBF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C24A3ED-B8F9-4E20-9630-5A2DB56BBF72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A91617-9617-40BC-ACC4-4427C40FCD71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A91617-9617-40BC-ACC4-4427C40FCD71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A91617-9617-40BC-ACC4-4427C40FCD71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A91617-9617-40BC-ACC4-4427C40FCD71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +71,7 @@ Global
 		{272C3A36-A948-4B2E-9F5E-E9F80334956B} = {8385A8DE-9291-4B77-A3F6-80F0ABF416DB}
 		{2E4D643E-7E55-41FF-A1F7-43444D04159A} = {73740BEB-E7CD-44D6-BD1A-6B50858A53B7}
 		{3C24A3ED-B8F9-4E20-9630-5A2DB56BBF72} = {73740BEB-E7CD-44D6-BD1A-6B50858A53B7}
+		{D8A91617-9617-40BC-ACC4-4427C40FCD71} = {8385A8DE-9291-4B77-A3F6-80F0ABF416DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A6A7F94-6433-4076-8829-A52D89DEAD44}
