@@ -5,9 +5,9 @@ using Eventlify.Persistence.Mongo.Handlers.Command;
 using Eventlify.Persistence.Mongo.Handlers.Query;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Eventlify.Api.Bootsrap
+namespace Eventlify.Api.Bootstrap
 {
-    public static class Domain
+    public static class DomainBootsrap
     {
         public static void AddUseCases(this IServiceCollection services)
         {

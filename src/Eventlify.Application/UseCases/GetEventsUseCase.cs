@@ -3,13 +3,14 @@ using System.Threading.Tasks;
 using Eventlify.Application.Handlers.Query;
 using Eventlify.Application.Models;
 using Eventlify.Application.Queries;
+using Eventlify.SharedKernel.Validation;
 
 namespace Eventlify.Application.UseCases
 {
     public interface IGetEventsUseCase
     {
         /// <summary>
-        /// Gets all events.
+        /// Gets events by query.
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<DomainEvent>> GetEvents(GetDomainEventsQuery query);
@@ -19,14 +20,19 @@ namespace Eventlify.Application.UseCases
     {
         private readonly IGetDomainEventsHandler _getDomainEventsHandlerHandler;
 
-        public GetEventsUseCase(IGetDomainEventsHandler getDomainEventsHandlerHandler)
+        public GetEventsUseCase(IGetDomainEventsHandler handler)
         {
-            _getDomainEventsHandlerHandler = getDomainEventsHandlerHandler;
+            Require.NotNull(handler);
+
+            _getDomainEventsHandlerHandler = handler;
         }
 
         public Task<IEnumerable<DomainEvent>> GetEvents(GetDomainEventsQuery query)
         {
-           return _getDomainEventsHandlerHandler.Handle(query);
-        }
+            Require.NotNull(query);
+            // error handling
+            // hook up with cache, logging and other components
+            return _getDomainEventsHandlerHandler.Handle(query);
+        } 
     }
 }

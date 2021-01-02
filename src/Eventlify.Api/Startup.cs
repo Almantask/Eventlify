@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Eventlify.Api.Bootsrap;
+using Eventlify.Api.Bootstrap;
 using Hellang.Middleware.ProblemDetails;
 
 namespace Eventlify.Api

@@ -2,9 +2,9 @@
 using Hellang.Middleware.ProblemDetails;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Eventlify.Api.Bootsrap
+namespace Eventlify.Api.Bootstrap
 {
-    public static class HttpResponse
+    public static class HttpResponsesBootsrap
     {
         public static void AddExceptionToStatusCodeMappings(this IServiceCollection services)
         {

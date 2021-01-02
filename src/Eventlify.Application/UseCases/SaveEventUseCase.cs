@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Eventlify.Application.Commands;
 using Eventlify.Application.Handlers.Command;
+using Eventlify.SharedKernel.Validation;
 
 namespace Eventlify.Application.UseCases
 {
@@ -16,11 +17,18 @@ namespace Eventlify.Application.UseCases
     {
         private readonly ISaveDomainEventsHandler _handler;
 
-        public SaveEventUseCase(ISaveDomainEventsHandler handler) => _handler= handler;
-
-        public Task SaveEvents(SaveDomainEventsCommand saveDomainEventsCommand)
+        public SaveEventUseCase(ISaveDomainEventsHandler handler)
         {
-            return _handler.Handle(saveDomainEventsCommand);
+            Require.NotNull(handler);
+
+            _handler = handler;
+        }
+
+        public Task SaveEvents(SaveDomainEventsCommand command)
+        {
+            Require.NotNull(command);
+
+            return _handler.Handle(command);
         }
     }
 }
