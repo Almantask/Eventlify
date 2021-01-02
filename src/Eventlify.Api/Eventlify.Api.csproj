@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Eventlify.Persistence.Mongo\Eventlify.Persistence.Mongo.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Http\" />
+  </ItemGroup>
+
 </Project>

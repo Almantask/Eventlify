@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Eventlify.Application.Handlers;
+﻿using Eventlify.Application.Handlers;
 using Eventlify.Application.UseCases;
 using Eventlify.Persistence.Mongo.Handlers;
 using Microsoft.Extensions.DependencyInjection;
