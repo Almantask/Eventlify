@@ -7,7 +7,7 @@ namespace Eventlify.Tests.Common
 {
     public static class MappingHelpers
     {
-        private static FixtureConstant fixture = new FixtureConstant();
+        private static readonly FixtureConstant fixture = new FixtureConstant();
 
         /// <summary>
         /// Unit tests <see cref="IMapper"/> mapping.

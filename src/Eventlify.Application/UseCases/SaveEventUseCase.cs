@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Eventlify.Application.Models;
+using Eventlify.Application.Commands;
+using Eventlify.Application.Handlers.Command;
 
 namespace Eventlify.Application.UseCases
 {
@@ -8,14 +9,18 @@ namespace Eventlify.Application.UseCases
     /// </summary>
     public interface ISaveEventUseCase
     {
-        Task Execute(DomainEvent domainEvent);
+        Task SaveEvents(SaveDomainEventsCommand saveDomainEventsCommand);
     }
 
     public class SaveEventUseCase : ISaveEventUseCase
     {
-        public Task Execute(DomainEvent domainEvent)
+        private readonly ISaveDomainEventsHandler _handler;
+
+        public SaveEventUseCase(ISaveDomainEventsHandler handler) => _handler= handler;
+
+        public Task SaveEvents(SaveDomainEventsCommand saveDomainEventsCommand)
         {
-            throw new System.NotImplementedException();
+            return _handler.Handle(saveDomainEventsCommand);
         }
     }
 }

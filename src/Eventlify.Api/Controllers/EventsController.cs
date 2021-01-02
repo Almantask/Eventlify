@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Eventlify.Application.Models;
+using Eventlify.Application.Commands;
+using Eventlify.Application.Queries;
 using Eventlify.Application.UseCases;
 
 namespace Eventlify.Api.Controllers
@@ -18,13 +19,16 @@ namespace Eventlify.Api.Controllers
             _saveEvents = saveEvents;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get() => Ok(await _getEvents.Execute());
+        [HttpPost]
+        public async Task<IActionResult> Get([FromBody]GetDomainEventsQuery query)
+        {
+            return Ok(await _getEvents.GetEvents(query));
+        }
 
         [HttpPost]
-        public async Task<IActionResult> Save([FromBody]DomainEvent domainEvent)
+        public async Task<IActionResult> Save([FromBody]SaveDomainEventsCommand domainEventCommand)
         {
-            await _saveEvents.Execute(domainEvent);
+            await _saveEvents.SaveEvents(domainEventCommand);
 
             return Ok();
         }

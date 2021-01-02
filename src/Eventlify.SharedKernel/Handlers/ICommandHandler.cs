@@ -1,4 +1,6 @@
-﻿namespace Eventlify.SharedKernel.Handlers
+﻿using System.Threading.Tasks;
+
+namespace Eventlify.SharedKernel.Handlers
 {
     /// <summary>
     /// Handler to execute a command.
@@ -10,6 +12,6 @@
         /// Executes a command.
         /// </summary>
         /// <param name="command">Command to be executed.</param>
-        void Handle(TCommand command);
+        Task Handle(TCommand command);
     }
 }

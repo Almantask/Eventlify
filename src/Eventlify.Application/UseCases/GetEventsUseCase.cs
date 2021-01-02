@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Eventlify.Application.Handlers;
+using Eventlify.Application.Handlers.Query;
 using Eventlify.Application.Models;
+using Eventlify.Application.Queries;
 
 namespace Eventlify.Application.UseCases
 {
@@ -11,18 +12,21 @@ namespace Eventlify.Application.UseCases
         /// Gets all events.
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<DomainEvent>> Execute();
+        Task<IEnumerable<DomainEvent>> GetEvents(GetDomainEventsQuery query);
     }
 
     public class GetEventsUseCase : IGetEventsUseCase
     {
-        private IDomainEventHandlers.IGetDomainEvents _getDomainEventsHandler;
+        private readonly IGetDomainEventsHandler _getDomainEventsHandlerHandler;
 
-        public GetEventsUseCase(IDomainEventHandlers.IGetDomainEvents getDomainEventsHandler) => this._getDomainEventsHandler = getDomainEventsHandler;
-
-        public Task<IEnumerable<DomainEvent>> Execute()
+        public GetEventsUseCase(IGetDomainEventsHandler getDomainEventsHandlerHandler)
         {
-           return _getDomainEventsHandler.Handle();
+            _getDomainEventsHandlerHandler = getDomainEventsHandlerHandler;
+        }
+
+        public Task<IEnumerable<DomainEvent>> GetEvents(GetDomainEventsQuery query)
+        {
+           return _getDomainEventsHandlerHandler.Handle(query);
         }
     }
 }

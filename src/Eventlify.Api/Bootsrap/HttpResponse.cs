@@ -8,12 +8,15 @@ namespace Eventlify.Api.Bootsrap
     {
         public static void AddExceptionToStatusCodeMappings(this IServiceCollection services)
         {
-            services.Map<NotSupportedException>(400);
+            services
+                .Map<NotSupportedException>(400);
         }
 
-        private static void Map<TException>(this IServiceCollection services, int statusCode) where TException : Exception
+        private static IServiceCollection Map<TException>(this IServiceCollection services, int statusCode) where TException : Exception
         {
-            services.AddProblemDetails(opt => opt.MapToStatusCode<TException>(400));
+            services.AddProblemDetails(opt => opt.MapToStatusCode<TException>(statusCode));
+
+            return services;
         }
     }
 }

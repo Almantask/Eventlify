@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Eventlify.Application.Handlers;
+using Eventlify.Application.Handlers.Query;
 using Eventlify.Application.Models;
+using Eventlify.Application.Queries;
 using Eventlify.Application.UseCases;
 using FluentAssertions;
 using Moq;
 using Xunit;
 using static Eventlify.Tests.Common.DummyGenerator;
 
-namespace Eventlify.Application.Tests
+namespace Eventlify.Application.Tests.UseCases
 {
     public class GetEventsUseCaseTests
     {
@@ -16,13 +17,14 @@ namespace Eventlify.Application.Tests
         public async Task Execute_Returns_EventsFromHandler()
         {
             var expectedEvent = Any<List<DomainEvent>>();
-            var handlerMock = new Mock<IDomainEventHandlers.IGetDomainEvents>();
+            var query = Any<GetDomainEventsQuery>();
+            var handlerMock = new Mock<IGetDomainEventsHandler>();
             handlerMock
-                .Setup(h => h.Handle())
+                .Setup(h => h.Handle(query))
                 .ReturnsAsync(expectedEvent);
             var useCase = new GetEventsUseCase(handlerMock.Object);
 
-            var events = await useCase.Execute();
+            var events = await useCase.GetEvents(query);
 
             events.Should().BeEquivalentTo(expectedEvent);
         }
