@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Eventlify.Application.Handlers;
 using Eventlify.Application.Models;
@@ -12,7 +13,7 @@ namespace Eventlify.Persistence.Mongo.Handlers
         {
             public void Handle(DomainEvent command)
             {
-                throw new System.NotImplementedException();
+                return;
             }
         }
 
@@ -20,7 +21,7 @@ namespace Eventlify.Persistence.Mongo.Handlers
         {
             public Task<IEnumerable<DomainEvent>> Handle()
             {
-                throw new System.NotImplementedException();
+                return Task.FromResult(Enumerable.Empty<DomainEvent>());
             }
         }
     }

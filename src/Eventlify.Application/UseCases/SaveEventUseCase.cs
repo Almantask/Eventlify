@@ -1,4 +1,5 @@
-﻿using Eventlify.Application.Models;
+﻿using System.Threading.Tasks;
+using Eventlify.Application.Models;
 
 namespace Eventlify.Application.UseCases
 {
@@ -7,12 +8,12 @@ namespace Eventlify.Application.UseCases
     /// </summary>
     public interface ISaveEventUseCase
     {
-        void Execute(DomainEvent domainEvent);
+        Task Execute(DomainEvent domainEvent);
     }
 
     public class SaveEventUseCase : ISaveEventUseCase
     {
-        public void Execute(DomainEvent domainEvent)
+        public Task Execute(DomainEvent domainEvent)
         {
             throw new System.NotImplementedException();
         }

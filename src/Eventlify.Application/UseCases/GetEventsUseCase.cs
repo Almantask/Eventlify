@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Eventlify.Application.Handlers;
 using Eventlify.Application.Models;
 
@@ -11,18 +12,18 @@ namespace Eventlify.Application.UseCases
         /// Gets all events.
         /// </summary>
         /// <returns></returns>
-        IEnumerable<DomainEvent> Execute();
+        Task<IEnumerable<DomainEvent>> Execute();
     }
 
     public class GetEventsUseCase : IGetEventsUseCase
     {
-        private IDomainEventHandlers.IGetDomainEvents @object;
+        private IDomainEventHandlers.IGetDomainEvents _getDomainEventsHandler;
 
-        public GetEventsUseCase(IDomainEventHandlers.IGetDomainEvents @object) => this.@object = @object;
+        public GetEventsUseCase(IDomainEventHandlers.IGetDomainEvents getDomainEventsHandler) => this._getDomainEventsHandler = getDomainEventsHandler;
 
-        public IEnumerable<DomainEvent> Execute()
+        public Task<IEnumerable<DomainEvent>> Execute()
         {
-            throw new NotImplementedException();
+           return _getDomainEventsHandler.Handle();
         }
     }
 }
