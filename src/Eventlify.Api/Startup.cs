@@ -23,6 +23,7 @@ namespace Eventlify.Api
         {
             services.AddUseCases();
             services.AddExceptionToStatusCodeMappings();
+            services.AddAutomapper();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

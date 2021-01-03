@@ -24,9 +24,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B2E4FB38-0
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventlify.SharedKernel", "src\Eventlify.SharedKernel\Eventlify.SharedKernel.csproj", "{D8A91617-9617-40BC-ACC4-4427C40FCD71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventlify.SharedKernel", "src\Eventlify.SharedKernel\Eventlify.SharedKernel.csproj", "{D8A91617-9617-40BC-ACC4-4427C40FCD71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventlify.Tests.Common", "tests\Eventlify.Tests.Common\Eventlify.Tests.Common.csproj", "{BF0228D0-5F34-44E4-AB76-F12663801F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventlify.Tests.Common", "tests\Eventlify.Tests.Common\Eventlify.Tests.Common.csproj", "{BF0228D0-5F34-44E4-AB76-F12663801F64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventlify.Tests.Common.Api", "tests\Eventlify.Tests.Common.Api\Eventlify.Tests.Common.Api.csproj", "{5BF0F5CB-C33A-40C7-B27A-5F3EB0A551C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +68,10 @@ Global
 		{BF0228D0-5F34-44E4-AB76-F12663801F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF0228D0-5F34-44E4-AB76-F12663801F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF0228D0-5F34-44E4-AB76-F12663801F64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF0F5CB-C33A-40C7-B27A-5F3EB0A551C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF0F5CB-C33A-40C7-B27A-5F3EB0A551C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF0F5CB-C33A-40C7-B27A-5F3EB0A551C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF0F5CB-C33A-40C7-B27A-5F3EB0A551C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{3C24A3ED-B8F9-4E20-9630-5A2DB56BBF72} = {73740BEB-E7CD-44D6-BD1A-6B50858A53B7}
 		{D8A91617-9617-40BC-ACC4-4427C40FCD71} = {8385A8DE-9291-4B77-A3F6-80F0ABF416DB}
 		{BF0228D0-5F34-44E4-AB76-F12663801F64} = {73740BEB-E7CD-44D6-BD1A-6B50858A53B7}
+		{5BF0F5CB-C33A-40C7-B27A-5F3EB0A551C2} = {73740BEB-E7CD-44D6-BD1A-6B50858A53B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A6A7F94-6433-4076-8829-A52D89DEAD44}

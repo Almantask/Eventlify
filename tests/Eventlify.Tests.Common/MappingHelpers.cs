@@ -32,5 +32,11 @@ namespace Eventlify.Tests.Common
 
             actualOutput.Should().BeEquivalentTo(expectedOutput);
         }
+
+        public static void VerifyMapping<TFrom, TTo>(this Profile profile, Action<TFrom> customizeIn = null, Action<TTo> customizeOut = null)
+        {
+            var mapper = new MapperConfiguration(cfg => cfg.AddProfile(profile)).CreateMapper();
+            mapper.VerifyMapping(customizeIn, customizeOut);
+        }
     }
 }

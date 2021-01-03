@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Eventlify.Application.Queries
+namespace Eventlify.Api.Messages
 {
-    public class GetDomainEventsQuery
+    public class DomainEventDto
     {
         /// <summary>
         /// When was the event created. UTC.

@@ -25,9 +25,6 @@ namespace Eventlify.Application.Models
         /// </summary>
         public long ExpiryTime { get; }
 
-        public DomainEvent(string name, string service, string domain, long expiryTime)
-            : this(DateTime.UtcNow, name, service, domain, expiryTime) { }
-
         public DomainEvent(DateTime timeStamp, string name, string service, string domain, long expiryTime)
         {
             TimeStamp = timeStamp;
